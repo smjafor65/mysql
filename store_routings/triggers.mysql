@@ -1,0 +1,10 @@
+delimiter $$
+ create trigger insert_data before insert  on products
+ for each row 
+ begin 
+
+ set new.total_price=price * offer_price;
+
+ end $$
+
+ delimiter ;
